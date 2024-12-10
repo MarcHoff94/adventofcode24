@@ -27,7 +27,7 @@ fn main() {
         for (i_col, &c) in line.iter().enumerate() {
             if c == pattern[0] {
                 for dir in directions.iter() {
-                    if matches_straight_pattern(&input, &pattern, i_line as i32, i_col as i32, *dir) {
+                    if matches_pattern(&input, &pattern, i_line as i32, i_col as i32, *dir) {
                         result += 1;
                     }
                 }
@@ -39,7 +39,7 @@ fn main() {
 }
 
 
-fn matches_straight_pattern(
+fn matches_pattern(
     input: &[Vec<char>],
     pattern: &[char],
     start_x: i32,
